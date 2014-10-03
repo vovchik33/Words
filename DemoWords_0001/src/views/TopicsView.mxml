@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<!--
+  Created by vladimirkr on 03.10.2014.
+-->
+<s:View xmlns:fx="http://ns.adobe.com/mxml/2009" xmlns:s="library://ns.adobe.com/flex/spark" destructionPolicy="never">
+    <s:titleContent>
+        <s:TextInput id="textInput" prompt="Enter search text..." width="100%"/>
+    </s:titleContent>
+    <s:actionContent>
+        <s:Button label="Search"
+                click="{topicsCollection.refresh();}"/>
+    </s:actionContent>
+    <s:Scroller width="100%" height="100%" horizontalScrollPolicy="off">
+        <s:Group width="100%" contentBackgroundAlpha="0">
+            <s:layout>
+                <s:VerticalLayout/>
+            </s:layout>
+            <s:List width="100%" id="list"
+                    horizontalScrollPolicy="off" verticalScrollPolicy="off"
+                    labelField="name">
+                <s:layout>
+                    <s:VerticalLayout useVirtualLayout="false" requestedMinRowCount="0" horizontalAlign="justify"/>
+                </s:layout>
+                <s:ArrayCollection id="topicsCollection" filterFunction="filterTopics">
+                    <fx:Object name="Vova1"/>
+                    <fx:Object name="Vova2"/>
+                    <fx:Object name="Vova1"/>
+                    <fx:Object name="Vova4"/>
+                    <fx:Object name="Voba1"/>
+                    <fx:Object name="Voba6"/>
+                    <fx:Object name="Vova1"/>
+                    <fx:Object name="Vova2"/>
+                    <fx:Object name="Vova1Vova1Vova1Vova1"/>
+                    <fx:Object name="Vova4"/>
+                    <fx:Object name="Voba1"/>
+                    <fx:Object name="Voba6"/>
+                    <fx:Object name="Vova1"/>
+                    <fx:Object name="Vova2"/>
+                    <fx:Object name="Vova1"/>
+                    <fx:Object name="Vova1"/>
+                    <fx:Object name="Vova2"/>
+                    <fx:Object name="Vova1"/>
+                    <fx:Object name="Vova4"/>
+                    <fx:Object name="Voba1"/>
+                    <fx:Object name="Voba6"/>
+                    <fx:Object name="Vova1"/>
+                    <fx:Object name="Vova2"/>
+                    <fx:Object name="Vova1"/>
+                    <fx:Object name="Vova4"/>
+                    <fx:Object name="Voba1"/>
+                    <fx:Object name="Voba6"/>
+                    <fx:Object name="Vova1"/>
+                    <fx:Object name="Vova2"/>
+                    <fx:Object name="Vova1"/>
+                    <fx:Object name="Vova1"/>
+                    <fx:Object name="Vova2"/>
+                    <fx:Object name="Vova1"/>
+                    <fx:Object name="Vova4"/>
+                    <fx:Object name="Voba1"/>
+                    <fx:Object name="Voba6"/>
+                    <fx:Object name="Vova1"/>
+                    <fx:Object name="Vova2"/>
+                    <fx:Object name="Vova1"/>
+                    <fx:Object name="Vova4"/>
+                    <fx:Object name="Voba1"/>
+                    <fx:Object name="Voba6"/>
+                    <fx:Object name="Vova1"/>
+                    <fx:Object name="Vova2"/>
+                    <fx:Object name="Vova1"/>
+                    <fx:Object name="Vova1"/>
+                    <fx:Object name="Vova2"/>
+                    <fx:Object name="Vova1"/>
+                    <fx:Object name="Vova4"/>
+                    <fx:Object name="Voba1"/>
+                    <fx:Object name="Voba6"/>
+                    <fx:Object name="Vova1"/>
+                    <fx:Object name="Vova2"/>
+                    <fx:Object name="Vova1"/>
+                    <fx:Object name="Vova4"/>
+                    <fx:Object name="Voba1"/>
+                    <fx:Object name="Voba6"/>
+                    <fx:Object name="Vova1"/>
+                    <fx:Object name="Vova2"/>
+                    <fx:Object name="Vova1"/>
+                </s:ArrayCollection>
+
+            </s:List>
+            <s:Button width="100%"
+                    label="More topics..."/>
+        </s:Group>
+    </s:Scroller>
+    <fx:Script><![CDATA[
+        private function filterTopics(item:Object):Boolean {
+            var tmpString:String = String(item.name).toLowerCase();
+
+            return textInput.text=="" || tmpString.indexOf(textInput.text.toLowerCase())>-1;
+        }
+        ]]></fx:Script>
+</s:View>

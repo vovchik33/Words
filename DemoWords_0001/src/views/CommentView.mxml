@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!--
+  Created by vladimirkr on 03.10.2014.
+-->
+<s:View xmlns:fx="http://ns.adobe.com/mxml/2009" xmlns:s="library://ns.adobe.com/flex/spark"
+        creationComplete="createCompleteHandler(event)" title="Left your comment...">
+    <s:navigationContent>
+        <s:Button label="Back" click="clickBackButtonHandler(event)"/>
+    </s:navigationContent>
+    <s:actionContent>
+        <s:Button label="Search"/>
+    </s:actionContent>
+    <fx:Script><![CDATA[
+        private function createCompleteHandler(event:Event):void {
+            this.tabBarVisible = false;
+            this.actionBarVisible = false;
+        }
+
+        private function clickBackButtonHandler(event:MouseEvent):void {
+            this.navigator.popView();
+        }
+        ]]></fx:Script>
+
+</s:View>
